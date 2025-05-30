@@ -1,0 +1,4 @@
+The Aims class must be updated to handle any exceptions generated when the play() methods are called. 
+         What happens when you don’t update for them to catch?
+
+- Nếu lớp Aims không được cập nhật để xử lý các ngoại lệ phát sinh khi gọi phương thức play(), trình biên dịch Java sẽ báo lỗi và không cho phép chương trình biên dịch thành công. Điều này xảy ra vì Java yêu cầu các ngoại lệ được khai báo rõ ràng hoặc xử lý một cách cụ thể trong mã nguồn. Việc không xử lý ngoại lệ có thể dẫn đến lỗi trong quá trình chạy chương trình (runtime), gây mất ổn định và ảnh hưởng đến trải nghiệm người dùng. Do đó, việc bắt và xử lý ngoại lệ là cần thiết để đảm bảo chương trình vận hành an toàn và ổn định.
