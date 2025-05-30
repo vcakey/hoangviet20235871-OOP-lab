@@ -1,0 +1,27 @@
+1.3.
++ Programming with AWT and Swing is quite similar (similar elements including container/components, 
+and event-handling). However, there are some differences that you need to note:
+   o Compare the top-level containers in Swing and AWT
+   o Compare the class name of components in AWT and the corresponding class’s name in Swing
+   o Compare the event-handling of Swing and AWT applications
++ The resulting appearances of the applications developed using Swing and AWT might be different as well.
+Make comparisons.
+
+=> So sánh sự khác nhau giữa việc sử dụng AWT và Swing:
+   o  top-level container:
+      + AWT: Chủ yếu hỗ trợ các tính năng cơ bản nhất.
+      VD: Frame, Dialog, Panel, ...
+      + Swing: Hỗ trợ đa dạng nhiều tính năng nâng cao.
+      VD: JFrame, JDialog, JPanel, ...
+   o  tên lớp của các thành phần:
+      + AWT: Không có tiền tố "J"
+      VD: Button, Label, TextField, ...
+      + Swing: Có tiền tố "J" do kế thừa từ JComponent
+      VD: JButton, JLabel, JTextField, ...
+   o  xử lý sự kiện
+      + AWT: Cơ chế xử lý cũ hơn, kém linh hoạt hơn.
+      + Swing: Về cơ bản giống với AWT, tuy nhiên đã được mở rộng thêm và hỗ trợ xử lý ngoại lệ.
+
+=>  So sánh kết quả giao diện:
+   + AWT: Phụ thuộc vào hệ thống, dẫn đến khác biệt giữa các hệ điều hành.
+   + Swing: Giao diện đồng nhất giữa các hệ điều hành
