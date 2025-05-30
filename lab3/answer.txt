@@ -1,0 +1,47 @@
+4. Write a toString() method for the DigitalVideoDisc class. What should be the return type of this method?
+=> Kiểu trả về của phương thức này -> phải là String.
+
+14. Which classes are aggregates of other classes?
+=> Các lớp có chứa lớp khác là:
+   - Store: Media.
+   - Cart: Media.
+   - CompactDisc: Track.
+
+15. If the passing object is not an instance of Media, what happens?
+=> Nếu đối tượng được truyền vào không phải là một instance của Media, ép kiểu gây ra lỗi ClassCastException.
+
+17. 
+    1. What class should implement the Comparable interface?
+   => Lớp nên implement là lớp Media.
+
+   2. In those classes, how should you implement the compareTo()method to reflect the ordering that we want?
+   => Cần ghi đè phương thức compareTo. Ví dụ:
+
+      @Override
+      public int compareTo(Media other) {
+         int titleCompare = this.title.compareTo(other.title);
+         if (titleCompare != 0) {
+            return titleCompare;
+         }
+         return Float.compare(this.cost, other.cost);
+      }
+
+   3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+   => Không thể có cùng lúc hai quy luật sắp xếp nếu dùng Comparable.
+
+   4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+   => Cần ghi đè phương thức compareTo cho lớp DigitalVideoDisc như sau:
+
+   @Override
+   public int compareTo(Media other) {
+      if (other instanceof DigitalVideoDisc) {
+         DigitalVideoDisc o = (DigitalVideoDisc) other;
+         int titleCompare = this.title.compareTo(o.title);
+         if (titleCompare != 0) return titleCompare;
+         int lengthCompare = Integer.compare(o.length, this.length);
+         if (lengthCompare != 0) return lengthCompare;
+         return Float.compare(this.cost, o.cost);
+      } else {
+         return super.compareTo(other);
+      }
+   }
